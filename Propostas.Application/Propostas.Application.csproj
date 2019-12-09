@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Interfaces\ILinguagensAppService.cs" />
+      <Compile Remove="Services\LinguagensAppService.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="8.0.0" />
+        <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-beta0006" />
+        <PackageReference Include="Spire.Doc" Version="7.1.19" />
+        <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+        <PackageReference Include="System.ComponentModel.Primitives" Version="4.3.0" />
+        <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Propostas.Domain\Propostas.Domain.csproj" />
+      <ProjectReference Include="..\Propostas.Infra.CrossCutting.Core\Propostas.Infra.CrossCutting.Core.csproj" />
+      <ProjectReference Include="..\Propostas.Infra.CrossCutting.Utils\Propostas.Infra.CrossCutting.Utils.csproj" />
+    </ItemGroup>
+
+</Project>

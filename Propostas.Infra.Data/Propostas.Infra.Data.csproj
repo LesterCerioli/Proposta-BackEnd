@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Migrations\20190214181012_templates.cs" />
+      <Compile Remove="Migrations\20190214193502_templates3.cs" />
+      <Compile Remove="Migrations\20190214194155_templates3.cs" />
+      <Compile Remove="Migrations\20190215193628_proposta.cs" />
+      <Compile Remove="Migrations\20190222140501_AddVersaoToSecao.cs" />
+      <Compile Remove="Migrations\20190222181625_AlteringTypesPropostaCustoTotal.cs" />
+      <Compile Remove="Migrations\20190320141019_base64.cs" />
+      <Compile Remove="Repository\LinguagensRepository.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.1.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
+        <PackageReference Include="System.Reflection.TypeExtensions" Version="4.5.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Propostas.Domain\Propostas.Domain.csproj" />
+        <ProjectReference Include="..\Propostas.Infra.CrossCutting.Utils\Propostas.Infra.CrossCutting.Utils.csproj" />
+    </ItemGroup>
+
+</Project>

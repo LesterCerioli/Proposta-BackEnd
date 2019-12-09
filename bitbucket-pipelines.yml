@@ -1,0 +1,26 @@
+# This is a sample build configuration for .NET Core.
+# Check our guides at https://confluence.atlassian.com/x/5Q4SMw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: microsoft/dotnet:sdk
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Build NET CORE Production
+          caches:
+            - dotnetcore
+          script:
+            - dotnet restore
+            - dotnet publish $PROJECT_NAME -c Release -o ./build
+          artifacts:
+            - Propostas.Web.Api/build/**
+      - step:
+          name: Deploy to Production
+          deployment: production
+          script:
+             - apt-get update
+             - apt-get install ncftp
+             - ncftpput -v -u "api-jorge-propostas-prod\jddev" -p "Blend@123" -R waws-prod-sn1-071.ftp.azurewebsites.windows.net /site/wwwroot $PROJECT_NAME/build/**

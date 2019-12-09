@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Interfaces\ILinguagensRepository.cs" />
+      <Compile Remove="Models\Linguagens.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="8.0.0" />
+        <PackageReference Include="DevExpress.Xpo" Version="18.2.3" />
+        <PackageReference Include="FluentValidation" Version="7.1.1" />
+        <PackageReference Include="System.ComponentModel" Version="4.3.0" />
+        <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Propostas.Infra.CrossCutting.Utils\Propostas.Infra.CrossCutting.Utils.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Enumerators\TagTipoEnum.cs">
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+
+</Project>
